@@ -17,6 +17,7 @@ with open('toScrape.csv', 'w') as outfile:
         content = content["quotes"]
         print(pageNumber)
         quotesNumber = 0
+        # content = [i for i in content if content != []]
         if content != []:
             for quotes in content:
                     quotesNumber += 1
