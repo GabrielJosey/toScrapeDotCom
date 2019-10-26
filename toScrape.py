@@ -15,12 +15,11 @@ with open('toScrape.csv', 'w') as outfile:
         pageNumber += 1
         content = requests.get('http://quotes.toscrape.com/api/quotes?page={}'.format(pageNumber)).json()
         content = content["quotes"]
-        print(pageNumber)
+        print("Scraping page {}".format(pageNumber))
         quotesNumber = 0
         if content != []:
             for quotes in content:
                     quotesNumber += 1
-                    print(quotesNumber)
                     author = quotes["author"]["name"].encode("utf-8")
                     try:
                         typeOfQuote = quotes["tags"][0].encode("utf-8")
